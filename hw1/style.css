@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.wrap{
+  width:100%;
+  max-width:1200px;
+}
+.item{
+  background-color: #ffa;
+  margin:0px 0px 10px;
+  padding: 10px;
+  flow : left;
+}
+.header{
+  background-color: #ffa;
+  margin:0px 0px 10px;
+  padding: 10px;
+}
+@media screen and (min-width: 768px){
+  .wrap{
+    display: flex;
+  }
+  .item{
+    background-color: #fdd;
+    margin:0px 10px 10px;
+  }
+  .header{
+    background-color: #fdd;
+  }
+}
+
+a:link{
+  color: blue;
+}
+a:visited{
+  color:green;
+}
+a:hover{
+  color:hotpink;
+}
+a:active{
+  color:black;
+}
