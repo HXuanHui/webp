@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>qz3</title>
+  <style>
+    *{
+      margin: 0;
+    }
+    div{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .title{
+      margin: auto;
+      padding: 10px;
+      width: 100%;
+      font-size: 30px;
+      text-align: center;
+    }
+    div p {
+      margin: auto;
+      padding: 10px;
+      width:100%;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  </a>
+  <p class="title">打字機2.0</p>
+  <div>
+    <p id="log">打字機比賽：</p>
+  </div>
+  <script type="text/javascript">
+    const log = document.getElementById('log');
+    document.addEventListener('keypress', logString);
+
+    // 每秒產生字串
+    var keyCode = 0;
+    var string = "D";
+    setInterval(() => {
+      keyCode = String.fromCharCode((Math.floor(Math.random()*100))%26+65);
+      string = `${keyCode}`+" " + string;
+    }, 400);
+
+    function logString(e) {
+      var len =string.length-1;
+      var eliChar = string.charAt(len);
+      if(String.fromCharCode(e.keyCode-32)==eliChar){
+        string = string.slice(0,-1);
+      }
+      log.textContent = "打字機比賽："+string;
+    }
+  </script>
+</body>
+
+</html>
