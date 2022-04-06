@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -41,7 +42,7 @@
 
     // 每秒產生字串
     var keyCode = 0;
-    var string = "D";
+    var string = "";
     setInterval(() => {
       keyCode = String.fromCharCode((Math.floor(Math.random()*100))%26+65);
       string = `${keyCode}`+" " + string;
@@ -50,8 +51,12 @@
     function logString(e) {
       var len =string.length-1;
       var eliChar = string.charAt(len);
-      if(String.fromCharCode(e.keyCode-32)==eliChar){
+      if(eliChar == " "){
         string = string.slice(0,-1);
+      }
+      console.log("eliChar"+eliChar);
+      if(String.fromCharCode(e.keyCode-32)==eliChar||String.fromCharCode(e.keyCode)==eliChar){
+        string = string.slice(0,-2);
       }
       log.textContent = "打字機比賽："+string;
     }
