@@ -6,16 +6,18 @@
   <meta name="viewport" content="width=device-width">
   <title>clock</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
   <p>CGU TIMER</p>
   <p class = "clock"></p>
   <script type="text/javascript">
+    var time;
     var today = new Date();
     setInterval(()=>{
       today = Date.now(); 
-      // console.log(today.toLocaleTimeString('it-IT'));
+      console.log(today.toLocaleTimeString('it-IT'));
       $(".clock").html(today.toLocaleTimeString('it-IT'));
     },1000);
   </script>
