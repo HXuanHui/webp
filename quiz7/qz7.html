@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <h1>台北市及時雨量資訊</h1>
+  <div id="contain"></div>
+  <script type="text/javascript">
+    var dataUrl = "https://wic.heo.taipei/OpenData/API/Rain/Get?stationNo=&loginID=open_rain&dataKey=85452C1D";
+   var data = $.getJSON(dataUrl);
+    data.done(function (msg) {
+      $.each(msg,function (i,item) {
+        $("#contain").html();
+        $("#contain").append($("<h2>"+item.stationName+"("+item.stationNo+")"+"</h2>"));
+        $("#contain").append($("<h3>"+item.recTime.getFullYear()+"年"+item.recTime.getMonth()+"月"+item.recTime.getHours()+"點"+item.recTime.getMinutes()+"分"+"</h3>"));
+        $("#contain").append($("<h3>及時雨量"+item.rain+"</h3>"));
+      });   
+    });
+    data.fail(function (msg) {
+      $("#contain").html("fail to get data.");  
+    });
+  </script>
+</body>
+
+</html>
