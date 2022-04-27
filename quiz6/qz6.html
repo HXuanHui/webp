@@ -13,9 +13,9 @@
   <p>CGU TIMER</p>
   <p class = "clock"></p>
   <script type="text/javascript">
-    var today = new Date();
     setInterval(()=>{
-      today = Date.now(); 
+      var today = new Date();
+      console.log(today.toLocaleTimeString('it-IT'));
       $(".clock").html(today.toLocaleTimeString('it-IT'));
     },1000);
   </script>
