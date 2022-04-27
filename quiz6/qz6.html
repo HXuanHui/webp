@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>clock</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <p>CGU TIMER</p>
+  <p class = "clock"></p>
+  <script type="text/javascript">
+    var today = new Date();
+    setInterval(()=>{
+      today = Date.now(); 
+      // console.log(today.toLocaleTimeString('it-IT'));
+      $(".clock").html(today.toLocaleTimeString('it-IT'));
+    },1000);
+  </script>
+</body>
+</html>
